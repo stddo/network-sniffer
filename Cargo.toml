@@ -6,11 +6,11 @@ edition = "2021"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
-pcap = "*"
-sysinfo = "*"
+pcap = "1.0.0"
+sysinfo = "0.27.0"
 
 [dependencies.windows]
-version = "*"
+version = "0.43.0"
 features = [
     "Win32_Foundation",
     "Win32_NetworkManagement_IpHelper",
