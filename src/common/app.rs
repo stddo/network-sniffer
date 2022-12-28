@@ -1,11 +1,12 @@
 use std::collections::HashMap;
+use serde::Serialize;
 
 use sysinfo::{Pid, PidExt, ProcessExt, System, SystemExt};
 
 #[cfg(target_os = "windows")]
 use crate::windows::collect_open_ports_by_app;
 
-#[derive(Clone)]
+#[derive(Clone, Serialize)]
 pub struct App {
     pub name: String,
     pub processes: Vec<LocalProcess>
@@ -37,7 +38,7 @@ impl App {
     }
 }
 
-#[derive(Clone)]
+#[derive(Clone, Serialize)]
 pub struct LocalProcess {
     pub local_port: u16,
     pub pid: u32

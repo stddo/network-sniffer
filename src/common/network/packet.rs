@@ -1,9 +1,11 @@
+use serde::Serialize;
 use crate::network::ethernet2::Ethernet2Header;
 use crate::network::link::internet::{IpExtension, IpHeader};
 use crate::network::link::internet::transport::application::ApplicationHeader;
 use crate::network::link::internet::transport::TransportHeader;
 use crate::network::ReadError;
 
+#[derive(Serialize)]
 pub struct Packet {
     pub lp_header: Ethernet2Header,
     pub ip_header: IpHeader,

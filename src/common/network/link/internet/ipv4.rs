@@ -1,6 +1,8 @@
+use serde::Serialize;
 use crate::common::network::packet::PacketReader;
 use crate::common::network::ReadError;
 
+#[derive(Serialize)]
 pub struct Ipv4Header {
     pub ihl: u8,
     pub dscp: u8,
@@ -55,6 +57,7 @@ impl Ipv4Header {
     }
 }
 
+#[derive(Serialize)]
 pub struct IPv4Flags {
     pub reserved: bool,
     pub df: bool,

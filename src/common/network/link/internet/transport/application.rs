@@ -1,6 +1,8 @@
+use serde::Serialize;
 use crate::common::network::packet::PacketReader;
 use crate::network::ReadError;
 
+#[derive(Serialize)]
 pub enum ApplicationHeader {
     Default
 }

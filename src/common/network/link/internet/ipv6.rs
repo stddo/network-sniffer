@@ -1,6 +1,8 @@
+use serde::Serialize;
 use crate::common::network::packet::PacketReader;
 use crate::network::ReadError;
 
+#[derive(Serialize)]
 pub struct Ipv6Header {
     pub traffic_class: u8,
     pub flow_label: u32,
@@ -29,6 +31,7 @@ impl Ipv6Header {
     }
 }
 
+#[derive(Serialize)]
 pub struct Ipv6HopByHopOptions {
     pub next_header: u8,
     pub hdr_ext_len: u8,
@@ -53,6 +56,7 @@ impl Ipv6HopByHopOptions {
     }
 }
 
+#[derive(Serialize)]
 pub struct Ipv6Fragment {
     pub next_header: u8,
     pub reserved: u8,
@@ -79,6 +83,7 @@ impl Ipv6Fragment {
     }
 }
 
+#[derive(Serialize)]
 pub struct Ipv6DestinationOptions {
     pub next_header: u8,
     pub hdr_ext_len: u8,
@@ -103,6 +108,7 @@ impl Ipv6DestinationOptions {
     }
 }
 
+#[derive(Serialize)]
 pub struct Ipv6Routing {
     pub next_header: u8,
     pub hdr_ext_len: u8,
@@ -131,6 +137,7 @@ impl Ipv6Routing {
     }
 }
 
+#[derive(Serialize)]
 pub struct Ipv6Authentication {
     pub next_header: u8,
     pub payload_len: u8,
@@ -159,6 +166,7 @@ impl Ipv6Authentication {
     }
 }
 
+#[derive(Serialize)]
 pub struct Ipv6EncapsulatingSecurityPayload {
 }
 
@@ -170,6 +178,7 @@ impl Ipv6EncapsulatingSecurityPayload {
     }
 }
 
+#[derive(Serialize)]
 pub struct Ipv6ExtensionOptions {
     pub option_type: u8,
     pub opt_data_len: u8,

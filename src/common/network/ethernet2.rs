@@ -1,8 +1,10 @@
 use std::mem;
 
+use serde::Serialize;
 use crate::common::network::packet::PacketReader;
 use crate::common::network::ReadError;
 
+#[derive(Serialize)]
 pub struct Ethernet2Header {
     pub destination: [u8; 6],
     pub source: [u8; 6],

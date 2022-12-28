@@ -1,5 +1,6 @@
 use std::net::{Ipv4Addr, Ipv6Addr};
 
+use serde::Serialize;
 use crate::common::network::link::internet::IpHeader::{V4Header, V6Header};
 use crate::common::network::link::internet::ipv4::Ipv4Header;
 use crate::common::network::link::internet::ipv6::Ipv6Header;
@@ -11,6 +12,7 @@ pub mod transport;
 pub mod ipv4;
 pub mod ipv6;
 
+#[derive(Serialize)]
 pub enum IpHeader {
     V4Header(Ipv4Header),
     V6Header(Ipv6Header),
@@ -62,6 +64,7 @@ impl IpHeader {
     }
 }
 
+#[derive(Serialize)]
 pub enum IpExtension {
     Ipv4Extension(Ipv4Extension),
     Ipv6Extension(Ipv6Extension)
@@ -111,8 +114,10 @@ impl IpExtension {
     }
 }
 
+#[derive(Serialize)]
 pub enum Ipv4Extension {}
 
+#[derive(Serialize)]
 pub enum Ipv6Extension {
     HopByHopOptions(Ipv6HopByHopOptions),
     Fragment(Ipv6Fragment),

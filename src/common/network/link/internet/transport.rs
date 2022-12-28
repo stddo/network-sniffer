@@ -1,6 +1,7 @@
 use tcp::TCPHeader;
 use udp::UDPHeader;
 
+use serde::Serialize;
 use crate::common::network::ReadError;
 use crate::common::network::packet::PacketReader;
 
@@ -8,6 +9,7 @@ pub mod application;
 pub mod tcp;
 pub mod udp;
 
+#[derive(Serialize)]
 pub enum TransportHeader {
     TCP(TCPHeader),
     UDP(UDPHeader),

@@ -1,6 +1,8 @@
+use serde::Serialize;
 use crate::common::network::packet::PacketReader;
 use crate::common::network::ReadError;
 
+#[derive(Serialize)]
 pub struct TCPHeader {
     pub src_port: u16,
     pub dst_port: u16,
@@ -45,6 +47,7 @@ impl TCPHeader {
     }
 }
 
+#[derive(Serialize)]
 pub struct TCPFlags {
     pub ns: bool,
     pub cwr: bool,
